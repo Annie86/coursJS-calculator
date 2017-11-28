@@ -13,7 +13,7 @@ function Calculator()
 
 			if (that.init == false)
 			{
-				$(that.field).val("");
+				$(that.field).html("");
 				that.init = true;
 			}
 			if (value != "=")
@@ -30,7 +30,52 @@ function Calculator()
 			that.dispatcher(value);
 				
 		});
+
+		$('body').keypress(function(event) {
+				console.log(event.which);
+				
+		    if (event.which == 48 ) {
+		    	$("#result").html(0);
+			}
+			if (event.which == 49 ) {
+		    	$("#result").html(1);
+			}
+			if (event.which == 50 ) {
+		    	$("#result").html(2);
+			}
+			if (event.which == 51 ) {
+		    	$("#result").html(3);
+			}
+			if (event.which == 52 ) {
+		    	$("#result").html(4);
+			}
+			if (event.which == 53 ) {
+		    	$("#result").html(5);
+			}
+			if (event.which == 54 ) {
+		    	$("#result").html(6);
+			}
+			if (event.which == 55 ) {
+		    	$("#result").html(7);
+			}
+			if (event.which == 56 ) {
+		    	$("#result").html(8);
+			}
+			if (event.which == 57 ) {
+		    	$("#result").html(9);
+			}
+			if (event.which == 13 ) {
+		    	$("#result").html()
+		    	if (value != "=")
+			{
+			$(that.field).html($(that.field).html() + value);
+			};
+			}
+			
+		});
 	}
+
+			
 
 	this.dispatcher = function(value)
 	{
@@ -66,6 +111,7 @@ function Calculator()
 				else if (numbers.length > 2)
 					$(this.field).html(result + symbol);
 			}
+			
 	};
 }
 
